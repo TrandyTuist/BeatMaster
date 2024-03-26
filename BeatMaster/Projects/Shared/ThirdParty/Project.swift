@@ -7,9 +7,18 @@ let project = Project.makeAppModule(
     name: "ThirdParty",
     bundleId: .appBundleID(name: ".ThirdParty"),
     product: .staticFramework,
-    settings:  .settings(),
+    settings:  .appBaseLibraySetting(appName: "ThirdParty"),
     dependencies: [
-        .SPM.composableArchitecture
+        .SPM.composableArchitecture,
+        .SPM.sdwebImage,
+        .SPM.swiftJWT,
+        .SPM.firebaseAuth,
+        .SPM.firebaseDatabase,
+        .SPM.firebaseMessaging,
+        .SPM.keychainAccess,
+        .SPM.kakaoSDKAuth,
+        .SPM.kakaoSDKUser,
+        .SPM.kakaoSDKCommon
 //        .SPM.supabase
     ],
     sources: ["Sources/**"]

@@ -1,7 +1,9 @@
 GENERATE = tuist generate
 FETCH = tuist fetch
 BUILD = tuist build
+CACHE = tuist cache warm BeatMaster
 CLEAN = tuist clean
+
 CURRENT_DATE = $(shell run scripts/current_date.swift)
 
 # Define your targets and dependencies
@@ -20,6 +22,13 @@ clean:
 .PHONY: fetch
 fetch:
 	$(FETCH)
+
+
+.PHONY: cache
+
+cache:
+	 $(CACHE)
+
 
 module:
 	tuist scaffold  $(template) \

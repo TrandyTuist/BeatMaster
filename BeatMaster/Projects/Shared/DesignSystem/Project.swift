@@ -1,5 +1,6 @@
 import Foundation
 import ProjectDescription
+import DependencyPlugin
 import ProjectTemplatePlugin
 
 let project = Project.makeAppModule(
@@ -8,7 +9,7 @@ let project = Project.makeAppModule(
     product: .staticFramework,
     settings:  .settings(),
     dependencies: [
-//        .Shared(implements: .ThirdParty)
+        .Shared(implements: .ThirdParty)
     ],
     sources: ["Sources/**"],
     resources: ["Resources/**"]

@@ -23,9 +23,9 @@ let project = Project.makeAppModule(
         
     ],
     sources: ["Sources/**", "Resources/FontAsset/**"],
-    resources: ["Resources/**"],
-    infoPlist: .file(path: "Support/Info.plist"),
-    entitlements: .file(path: "Entitlements/BeatMaster.entitlements")
+    resources: ["Resources/**", "../Support/AuthKey_P552TDR3Q2.p8", "../Support/PrivacyInfo.xcprivacy"],
+    infoPlist: .file(path: "../Support/Info.plist"),
+    entitlements: .file(path: "../Entitlements/BeatMaster.entitlements")
     
 )
 

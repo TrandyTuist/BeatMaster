@@ -9,18 +9,17 @@
 import SwiftUI
 import Splash
 import ComposableArchitecture
+import Auth
+import Root
 
 @main
 struct DemoBeatMaster: App {
     var body: some Scene {
         WindowGroup {
-            SplashView(
-                store:
-                    Store(
-                        initialState: SplashFeature.State(),
-                        reducer: {
-                SplashFeature()
-            }))
+            AuthInfromationView(store: Store(
+                initialState: AuthInfromationFeature.State(), reducer: {
+                    AuthInfromationFeature()
+                }), backAction: {})
         }
     }
 }

@@ -69,6 +69,7 @@ extension Settings {
                    "MARKETING_VERSION": .string(.appVersion()),
                    "CURRENT_PROJECT_VERSION": .string(.appBuildVersion()),
                    "CODE_SIGN_IDENTITY": "iPhone Developer",
+                   "AS_AUTHENTICATION_SERVICES_ENABLED": "YES",
 //                   "CODE_SIGN_STYLE": "Automatic",
 //                   "DEVELOPMENT_TEAM": "\(Project.Environment.organizationTeamId)",
                    "VERSIONING_SYSTEM": "apple-generic",
@@ -83,9 +84,9 @@ extension Settings {
                     "STRIP_STYLE": [
                         "non-global"
                     ],
-                    "OTHER_SWIFT_FLAGS": [
-                        "$(inherited)", "-enable-actor-data-race-checks"
-                    ]
+//                    "OTHER_SWIFT_FLAGS": [
+//                        "$(inherited)", "-enable-actor-data-race-checks"
+//                    ]
                 ]),
                 .debug(name: "Dev", settings: [
                     "PRODUCT_NAME" : "\(appName)-Dev",
@@ -96,9 +97,9 @@ extension Settings {
                     "STRIP_STYLE": [
                         "non-global"
                     ],
-                    "OTHER_SWIFT_FLAGS": [
-                        "$(inherited)", "-enable-actor-data-race-checks"
-                    ]
+//                    "OTHER_SWIFT_FLAGS": [
+//                        "$(inherited)", "-enable-actor-data-race-checks"
+//                    ]
                     
                 ]),
                 .release(name: .release, settings: [
@@ -110,9 +111,9 @@ extension Settings {
                     "STRIP_STYLE": [
                         "non-global"
                     ],
-                    "OTHER_SWIFT_FLAGS": [
-                        "$(inherited)", "-enable-actor-data-race-checks"
-                    ]
+//                    "OTHER_SWIFT_FLAGS": [
+//                        "$(inherited)", "-enable-actor-data-race-checks"
+//                    ]
                 ])], defaultSettings: .recommended)
         
         return appBaseSetting

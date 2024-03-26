@@ -10,6 +10,7 @@ import Foundation
 import ComposableArchitecture
 import SwiftUI
 import Auth
+import Profile
 import DesignSystem
 
 public struct RootView: View {
@@ -36,6 +37,7 @@ public struct RootView: View {
                 
                 Spacer()
             }
+            .navigationBarBackButtonHidden()
         } destination: { swithStore in
             switch swithStore.case {
             case let .auth(authStore):
@@ -55,6 +57,26 @@ public struct RootView: View {
                     store.send(.removePath)
                 }
                 .navigationBarBackButtonHidden()
+                
+            case let .web(webStore):
+                WebViews(
+                    store: webStore,
+                    loading: $store.webLoading
+                )
+                .navigationBarBackButtonHidden()
+                
+            case let .authInfo(authInfoStore):
+                AuthInfromationView(
+                    store: authInfoStore){
+                        store.send(.removePath)
+                    }
+                .navigationBarBackButtonHidden()
+                
+            case let .profile(profileStore):
+                ProfileView(store: profileStore) {
+                    store.send(.removeAllPath)
+                }
+                .navigationBarBackButtonHidden()
             }
             
             //MARK: -  1.7 이하
@@ -71,7 +93,9 @@ public struct RootView: View {
 //                }
 //            }
         }
-
+        .onAppear{
+            store.send(.isLoginPresntAuth)
+        }
     }
 }
 

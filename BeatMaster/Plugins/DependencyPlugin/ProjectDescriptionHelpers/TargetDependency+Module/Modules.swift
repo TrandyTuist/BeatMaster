@@ -33,6 +33,7 @@ public extension ModulePath {
         case Metronome
         case Splash
         case Root
+        case Profile
         
         public static let name: String = "Feature"
     }
@@ -52,7 +53,7 @@ public extension ModulePath {
 //MARK: -  CoreDomainModule
 public extension ModulePath {
     enum Networkings: String, CaseIterable {
-        case Networking
+        case API
         case Networkings
         case Model
         case Service

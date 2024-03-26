@@ -3,7 +3,7 @@
 .DS_Store
 .AppleDouble
 .LSOverride
-
+.p8
 # Icon must end with two
 Icon
 
@@ -61,10 +61,13 @@ DerivedData/
 ### Projects ###
 *.xcodeproj
 *.xcworkspace
-
+*.p8
 ### Tuist derived files ###
 graph.dot
 Derived/
 
 ### Tuist managed dependencies ###
 Tuist/Dependencies
+*.p12
+*.cer
+*.p8
